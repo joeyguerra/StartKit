@@ -1,4 +1,6 @@
-# iOS StartKit with Jenkins and FastLane
+# fastlane documentation
+
+================
 
 ## Installation
 
@@ -8,55 +10,99 @@ Make sure you have the latest version of the Xcode command line tools installed:
 xcode-select --install
 ```
 
-Install _fastlane_:
+Install _fastlane_ using
 
 ```bash
 [sudo] gem install fastlane -NV
 ```
 
-or alternatively:
-
-```bash
-brew cask install fastlane
-```
+or alternatively using `brew cask install fastlane`
 
 ## Available Actions
 
 ### iOS
 
-#### ios custom_lane
+#### ios add_devices
 
 ```bash
-bundle exec fastlane ios custom_lane
+bundle exec fastlane ios add_devices
 ```
 
-## Available Actions
+Add testing devices. Run by the codebase manager.
 
-### iOS
-
-#### ios test: Run all tests
+#### ios prepare
 
 ```bash
-bundle exec fastlane ios test
+bundle exec fastlane ios prepare
 ```
 
-#### ios beta: Submit a new Beta Build to Apple TestFlight
+Clear build folder and update carthage.
+#### ios carthage_update
+
+```bash
+bundle exec fastlane ios carthage_update
+```
+
+Update carthage
+
+#### ios clear_build_files
+
+```bash
+bundle exec fastlane ios clear_build_files
+```
+
+Clear build files.
+
+#### ios lint
+
+```bash
+bundle exec fastlane ios lint
+```
+
+Code stype check
+
+#### ios run_test
+
+```bash
+bundle exec fastlane ios run_test
+```
+
+Run all tests on iPhone 6.
+
+#### ios checkin
+
+```bash
+bundle exec fastlane ios checkin
+```
+
+Checkin. Run this everytime before git push.
+
+#### ios build
+
+```bash
+bundle exec fastlane ios build
+```
+
+Build for ad-hoc
+
+#### ios deploy_beta
+
+```bash
+bundle exec fastlane ios deploy_beta
+```
+
+Deploy beta to hockeyapp
+
+#### ios beta
 
 ```bash
 bundle exec fastlane ios beta
 ```
 
-This will also make sure the profile is up to date.
-
-#### ios release: Deploy a new version to the App Store
-
-```bash
-bundle exec fastlane ios release
-```
+Test, build and deploy beta to hockeyapp
 
 ----
 
 This README.md is auto-generated and will be re-generated every time [fastlane](https://fastlane.tools) is run.
-
 More information about fastlane can be found on [fastlane.tools](https://fastlane.tools).
 The documentation of fastlane can be found on [docs.fastlane.tools](https://docs.fastlane.tools).
