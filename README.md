@@ -124,7 +124,7 @@ jenkins
 * CI will trigger `bundle exec fastlane beta` after every `git push` and deploy the successful build package to HockeyApp
 * Run `bundle exec fastlane add_devices` every time new device is added into the file (codebase manager)
 
-### Other Recommendations
+### Other Recommendation
 
 ```bash
 - Code Structure: MVVM (VIPPER for complex data flow)
