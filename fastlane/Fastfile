@@ -71,9 +71,9 @@ platform :ios do
   desc "Build for ad-hoc"
   lane :build do
     match(
-      git_url: "git@bitbucket.org:iossocket/iosstartkitmatchrepo.git",
+      git_url: "git@github.com:joeyguerra/StartKit.git",
       type: "adhoc",
-      app_identifier: "com.thoughtworks.StartKit",
+      app_identifier: "com.example.StartKit",
       readonly: true,
       force_for_new_devices: true
     )
